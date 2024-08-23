@@ -188,16 +188,11 @@ public class Ej1Login extends javax.swing.JFrame {
       String pass = JTpassword.getText();
       if(user.equals("alumno@ulp.edu.ar") || pass.equals("12345678")){
           JOptionPane.showMessageDialog(null, "Bienvenido!");
-          JOptionPane.showMessageDialog(null,"Realizado por Equipo 11");
+          JOptionPane.showMessageDialog(null,"Hecho por grupo 11:\nSosa Chirino Marcos Antonio\nPino Santiago Daniel\nPestchaker Mauricio Andres\nQuiroga Maximo\n");
       }else{
           JOptionPane.showMessageDialog(null, "Usuario o contraseña invalidos");
       }
-        System.out.println("Sosa Chirino Marcos Antonio");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
+        
     }//GEN-LAST:event_JBverificarActionPerformed
 
     /**
