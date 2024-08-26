@@ -30,9 +30,9 @@ public class Ej1Login extends javax.swing.JFrame {
         JLusuario = new javax.swing.JLabel();
         JLpassword = new javax.swing.JLabel();
         JTusuariocasilla = new javax.swing.JTextField();
-        JTpassword = new javax.swing.JTextField();
         JBverificar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        JPass = new javax.swing.JPasswordField();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -52,15 +52,10 @@ public class Ej1Login extends javax.swing.JFrame {
         JLpassword.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         JLpassword.setText("Contraseña");
 
+        JTusuariocasilla.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         JTusuariocasilla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTusuariocasillaActionPerformed(evt);
-            }
-        });
-
-        JTpassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTpasswordActionPerformed(evt);
             }
         });
 
@@ -78,28 +73,37 @@ public class Ej1Login extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(204, 0, 102));
         jLabel4.setText("INGRESE LOS DATOS");
 
+        JPass.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        JPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JPassActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(JLusuario)
-                        .addGap(42, 42, 42)
-                        .addComponent(JTusuariocasilla, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(117, 117, 117)
                         .addComponent(JBverificar))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel4))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(JLpassword)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(JTpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(JLusuario))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(JLpassword)))
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(JTusuariocasilla, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                            .addComponent(JPass))))
                 .addContainerGap(77, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -112,8 +116,8 @@ public class Ej1Login extends javax.swing.JFrame {
                     .addComponent(JLusuario))
                 .addGap(43, 43, 43)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JLpassword))
+                    .addComponent(JLpassword)
+                    .addComponent(JPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addComponent(JBverificar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
@@ -197,21 +201,21 @@ public class Ej1Login extends javax.swing.JFrame {
       
     }//GEN-LAST:event_JTusuariocasillaActionPerformed
 
-    private void JTpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTpasswordActionPerformed
-       
-    }//GEN-LAST:event_JTpasswordActionPerformed
-
     private void JBverificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBverificarActionPerformed
       String user = JTusuariocasilla.getText();
-      String pass = JTpassword.getText();
+      String pass = JPass.getText();
       if(user.equals("alumno@ulp.edu.ar") || pass.equals("12345678")){
           JOptionPane.showMessageDialog(null, "Bienvenido!");
-          JOptionPane.showMessageDialog(null,"Hecho por grupo 11:\nSosa Chirino Marcos Antonio\nPino Santiago Daniel\nPestchaker Mauricio Andres\nQuiroga Maximo\n");
+          JOptionPane.showMessageDialog(null,"Hecho por grupo 11:\nSosa Chirino Marcos Antonio\nPino Santiago Daniel\nPestchanker Mauricio Andres\nQuiroga Maximo Tomas\nVega Maria Belen");
       }else{
           JOptionPane.showMessageDialog(null, "Usuario o contraseña invalidos");
       }
         
     }//GEN-LAST:event_JBverificarActionPerformed
+
+    private void JPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JPassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JPassActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,7 +256,7 @@ public class Ej1Login extends javax.swing.JFrame {
     private javax.swing.JButton JBverificar;
     private javax.swing.JLabel JLpassword;
     private javax.swing.JLabel JLusuario;
-    private javax.swing.JTextField JTpassword;
+    private javax.swing.JPasswordField JPass;
     private javax.swing.JTextField JTusuariocasilla;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
