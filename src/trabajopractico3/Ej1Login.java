@@ -203,7 +203,7 @@ public class Ej1Login extends javax.swing.JFrame {
 
     private void JBverificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBverificarActionPerformed
       String user = JTusuariocasilla.getText();
-      String pass = JPass.getText();
+      String pass = JPass.toString();
       if(user.equals("alumno@ulp.edu.ar") || pass.equals("12345678")){
           JOptionPane.showMessageDialog(null, "Bienvenido!");
           JOptionPane.showMessageDialog(null,"Hecho por grupo 11:\nSosa Chirino Marcos Antonio\nPino Santiago Daniel\nPestchanker Mauricio Andres\nQuiroga Maximo Tomas\nVega Maria Belen");
