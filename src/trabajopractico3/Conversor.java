@@ -4,6 +4,8 @@
  */
 package trabajopractico3;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
@@ -28,8 +30,8 @@ public class Conversor extends javax.swing.JFrame {
 
         jfondo = new javax.swing.JPanel();
         Jtitulo = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jnumc = new javax.swing.JTextField();
+        jconvert = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,16 +43,21 @@ public class Conversor extends javax.swing.JFrame {
         Jtitulo.setText("Convertidor de Celsius a Fahrenheit");
         Jtitulo.setOpaque(true);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jnumc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jnumcActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 204));
-        jButton1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 0, 0));
-        jButton1.setText("Convertir");
+        jconvert.setBackground(new java.awt.Color(0, 102, 204));
+        jconvert.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jconvert.setForeground(new java.awt.Color(255, 0, 0));
+        jconvert.setText("Convertir");
+        jconvert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jconvertActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jfondoLayout = new javax.swing.GroupLayout(jfondo);
         jfondo.setLayout(jfondoLayout);
@@ -63,10 +70,10 @@ public class Conversor extends javax.swing.JFrame {
                         .addComponent(Jtitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jfondoLayout.createSequentialGroup()
                         .addGap(132, 132, 132)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jnumc, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jfondoLayout.createSequentialGroup()
                         .addGap(146, 146, 146)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jconvert, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         jfondoLayout.setVerticalGroup(
@@ -75,9 +82,9 @@ public class Conversor extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(Jtitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jnumc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jconvert, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
@@ -95,9 +102,21 @@ public class Conversor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jnumcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jnumcActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jnumcActionPerformed
+
+    private void jconvertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jconvertActionPerformed
+       
+        try{
+        double num = Double.parseDouble(jnumc.getText());
+       double Fahrenheit = num * 9/5 + 32;
+       
+       JOptionPane.showMessageDialog(this, "Convertido: " + Fahrenheit);
+        }catch(NumberFormatException nf){
+            JOptionPane.showMessageDialog(this, "¡Solo puede ingresar enteros o decimales!", "Datos incorrectos ingresados", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jconvertActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,8 +155,8 @@ public class Conversor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Jtitulo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jconvert;
     private javax.swing.JPanel jfondo;
+    private javax.swing.JTextField jnumc;
     // End of variables declaration//GEN-END:variables
 }
